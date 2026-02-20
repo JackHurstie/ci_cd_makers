@@ -34,7 +34,7 @@ jobs:
           script: |
             set -euo pipefail
             cd ~/message-server
-            docker build --pull -t message-server:latest .
+            docker build --pull -t message-server-img:latest .
             docker stop message-server || true
             docker rm message-server || true
             docker image prune -f || true
@@ -47,4 +47,4 @@ jobs:
               -e POSTGRES_PASSWORD='${{ secrets.POSTGRES_PASSWORD }}' \
               -e POSTGRES_HOST='${{ secrets.POSTGRES_HOST }}' \
               -e POSTGRES_DB='postgres' \
-              message-server:latest
+              message-server-img:latest

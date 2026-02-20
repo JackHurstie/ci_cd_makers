@@ -60,7 +60,7 @@ def get_messages():
     rows = cursor.fetchall()
 
     # Format the results and add a form too
-    return "<h2>Your Messages</h2>" + format_messages(rows) + generate_form()
+    return "<h2>Your Messages are here:</h2>" + format_messages(rows) + generate_form()
 
 # These two methods generate HTML lists and forms
 def format_messages(messages):
